@@ -4,12 +4,14 @@ import android.Manifest
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import ru.snowmaze.dartpermissions.R
 import ru.snowmaze.dartpermissions.permissionsRequester
+import ru.snowmaze.dartpermissions.requestPermissions
 
 class ExampleFragment: Fragment(R.layout.fragment_example) {
 
@@ -38,6 +40,10 @@ class ExampleFragment: Fragment(R.layout.fragment_example) {
 
             // Should show permission rationale for permission?
             val shouldShowPermissionRationale = result.shouldShowRequestPermissionRationale
+
+            Toast.makeText(
+                requireContext(), "Is granted $isGranted", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -45,11 +51,9 @@ class ExampleFragment: Fragment(R.layout.fragment_example) {
     private fun requestPermissions() {
         viewLifecycleOwner.lifecycleScope.launch {
             val result = permissionsRequester.requestPermissions(
-                arrayOf(
-                    Manifest.permission.READ_MEDIA_IMAGES,
-                    Manifest.permission.READ_MEDIA_AUDIO,
-                    Manifest.permission.READ_MEDIA_VIDEO
-                )
+                Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.READ_MEDIA_AUDIO,
+                Manifest.permission.READ_MEDIA_VIDEO
             )
 
             // Are all 3 permissions granted?
@@ -68,6 +72,10 @@ class ExampleFragment: Fragment(R.layout.fragment_example) {
             // Should show permission rationale for reading video permission?
             val showPermissionRationaleForReadVideo =
                 result.shouldShowPermissionRationale.getValue(Manifest.permission.READ_MEDIA_VIDEO)
+
+            Toast.makeText(
+                requireContext(), "Is granted $isGrantedReadMedia", Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }

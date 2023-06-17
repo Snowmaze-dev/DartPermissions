@@ -1,13 +1,13 @@
 package ru.snowmaze.dartpermissions
 
+import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import kotlinx.coroutines.suspendCancellableCoroutine
 
-class PermissionsRequester(private val activity: AppCompatActivity) {
+class PermissionsRequester(private val activity: ComponentActivity) {
 
     private val awaitingResult = mutableMapOf<Set<String>, (PermissionRequestResult) -> Unit>()
 

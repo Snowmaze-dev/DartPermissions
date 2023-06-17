@@ -18,11 +18,9 @@ class MainActivity : AppCompatActivity(), PermissionsRequesterHolder {
 ```kotlin
 viewLifecycleOwner.lifecycleScope.launch {
     val result = permissionsRequester.requestPermissions(
-        arrayOf(
-            Manifest.permission.READ_MEDIA_IMAGES,
-            Manifest.permission.READ_MEDIA_AUDIO,
-            Manifest.permission.READ_MEDIA_VIDEO
-        )
+        Manifest.permission.READ_MEDIA_IMAGES,
+        Manifest.permission.READ_MEDIA_AUDIO,
+        Manifest.permission.READ_MEDIA_VIDEO
     )
 
     // Are all 3 permissions granted?
