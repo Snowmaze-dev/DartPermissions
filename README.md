@@ -5,6 +5,16 @@ This library enables you to request permissions using coroutines without using s
 To use this library, you need to implement an interface for the activity that has one variable - PermissionManager. Then, the library is ready to use.
 You can check example in app module of the project.
 
+### Implementation of interface:
+```kotlin
+class MainActivity : AppCompatActivity(), PermissionManagerHolder {
+
+    override val permissionManager = PermissionManager(this)
+    
+}
+```
+
+### Usage:
 ```kotlin
 viewLifecycleOwner.lifecycleScope.launch {
     val result = permissionManager.requestPermissions(
@@ -26,3 +36,4 @@ viewLifecycleOwner.lifecycleScope.launch {
     val showPermissionRationaleForReadVideo =
     result.shouldShowPermissionRationale.getValue(Manifest.permission.READ_MEDIA_VIDEO)
 }
+```
