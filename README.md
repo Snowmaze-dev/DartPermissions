@@ -29,7 +29,7 @@ viewLifecycleOwner.lifecycleScope.launch {
     // Is any of 3 permissions granted?
     val isAnyGrantedReadMedia = result.isAnyGranted
 
-    // Are specific permissions granted?
+    // Check if specific permissions are granted
     val isGrantedAudio = result.grantResults.getValue(Manifest.permission.READ_MEDIA_AUDIO)
     val isGrantedVideo = result.grantResults.getValue(Manifest.permission.READ_MEDIA_VIDEO)
 
