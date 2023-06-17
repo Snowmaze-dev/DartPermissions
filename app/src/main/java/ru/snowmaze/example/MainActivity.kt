@@ -2,13 +2,13 @@ package ru.snowmaze.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ru.snowmaze.dartpermissions.PermissionManager
-import ru.snowmaze.dartpermissions.PermissionManagerHolder
+import ru.snowmaze.dartpermissions.PermissionsRequester
+import ru.snowmaze.dartpermissions.PermissionsRequesterHolder
 import ru.snowmaze.dartpermissions.R
 
-class MainActivity : AppCompatActivity(), PermissionManagerHolder {
+class MainActivity : AppCompatActivity(), PermissionsRequesterHolder {
 
-    override val permissionManager = PermissionManager(this)
+    override val permissionsRequester = PermissionsRequester(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

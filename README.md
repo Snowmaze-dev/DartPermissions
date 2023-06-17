@@ -2,14 +2,14 @@
 
 ### Yet another library for requesting permissions using coroutines
 This library enables you to request permissions using coroutines without using shadow activities.
-To use this library, you need to implement an interface for the activity that has one variable - PermissionManager. Then, the library is ready to use.
+To use this library, you need to implement an interface for the activity that has one variable - PermissionsRequester. Then, the library is ready to use.
 You can check example in app module of the project.
 
 ### Implementation of interface:
 ```kotlin
-class MainActivity : AppCompatActivity(), PermissionManagerHolder {
+class MainActivity : AppCompatActivity(), PermissionsRequesterHolder {
 
-    override val permissionManager = PermissionManager(this)
+    override val permissionsRequester = PermissionsRequester(this)
     
 }
 ```
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), PermissionManagerHolder {
 ### Usage:
 ```kotlin
 viewLifecycleOwner.lifecycleScope.launch {
-    val result = permissionManager.requestPermissions(
+    val result = permissionsRequester.requestPermissions(
         arrayOf(
             Manifest.permission.READ_MEDIA_IMAGES,
             Manifest.permission.READ_MEDIA_AUDIO,

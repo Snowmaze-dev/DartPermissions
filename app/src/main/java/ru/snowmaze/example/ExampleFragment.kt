@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import ru.snowmaze.dartpermissions.R
-import ru.snowmaze.dartpermissions.permissionManager
+import ru.snowmaze.dartpermissions.permissionsRequester
 
 class ExampleFragment: Fragment(R.layout.fragment_example) {
 
@@ -25,7 +25,7 @@ class ExampleFragment: Fragment(R.layout.fragment_example) {
 
     private fun requestPermission() {
         viewLifecycleOwner.lifecycleScope.launch {
-            val result = permissionManager.requestPermission(
+            val result = permissionsRequester.requestPermission(
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     Manifest.permission.READ_MEDIA_IMAGES
                 } else {
@@ -44,7 +44,7 @@ class ExampleFragment: Fragment(R.layout.fragment_example) {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun requestPermissions() {
         viewLifecycleOwner.lifecycleScope.launch {
-            val result = permissionManager.requestPermissions(
+            val result = permissionsRequester.requestPermissions(
                 arrayOf(
                     Manifest.permission.READ_MEDIA_IMAGES,
                     Manifest.permission.READ_MEDIA_AUDIO,

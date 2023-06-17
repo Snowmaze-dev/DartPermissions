@@ -7,7 +7,7 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import kotlinx.coroutines.suspendCancellableCoroutine
 
-class PermissionManager(private val activity: AppCompatActivity) {
+class PermissionsRequester(private val activity: AppCompatActivity) {
 
     private val awaitingResult = mutableMapOf<Set<String>, (PermissionRequestResult) -> Unit>()
 
