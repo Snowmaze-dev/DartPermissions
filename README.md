@@ -2,6 +2,7 @@
 
 ### Yet another library for requesting permissions with coroutines
 This library allows you to request permissions with coroutines, avoiding the use of shadow activities and the bugs associated with them.
+
 To use this library, you need to implement an interface for the activity that has one variable - PermissionManager. Then, the library is ready to use.
 You can check example in app module of the project.
 
