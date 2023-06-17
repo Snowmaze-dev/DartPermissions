@@ -1,7 +1,7 @@
 # DartPermissions
 
 ### Yet another library for requesting permissions using coroutines
-This library enables you to request permissions using coroutines without using shadow activities.
+This library allows you to request permissions with coroutines, avoiding the use of shadow activities and the bugs associated with them.
 To use this library, you need to implement an interface for the activity that has one variable - PermissionManager. Then, the library is ready to use.
 You can check example in app module of the project.
 
