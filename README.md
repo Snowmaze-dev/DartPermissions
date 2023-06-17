@@ -33,7 +33,6 @@ viewLifecycleOwner.lifecycleScope.launch {
     val isGrantedVideo = result.grantResults.getValue(Manifest.permission.READ_MEDIA_VIDEO)
 
     // Should show permission rationale for reading video permission?
-    val showPermissionRationaleForReadVideo =
-    result.shouldShowPermissionRationale.getValue(Manifest.permission.READ_MEDIA_VIDEO)
+    val showPermissionRationaleForReadVideo = result.shouldShowPermissionRationale.getValue(Manifest.permission.READ_MEDIA_VIDEO)
 }
 ```
