@@ -36,3 +36,5 @@ viewLifecycleOwner.lifecycleScope.launch {
     val showPermissionRationaleForReadVideo = result.shouldShowPermissionRationale.getValue(Manifest.permission.READ_MEDIA_VIDEO)
 }
 ```
+
+I will put the library on some repository when someone needs it
