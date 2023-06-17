@@ -55,6 +55,9 @@ class ExampleFragment: Fragment(R.layout.fragment_example) {
             // Are all 3 permissions granted?
             val isGrantedReadMedia = result.isGranted
 
+            // Is any of 3 permissions granted?
+            val isAnyGrantedReadMedia = result.isAnyGranted
+
             // Should show permission rationale for any of 3 permissions?
             val showPermissionRationaleForReadMedia = result.shouldShowRequestPermissionRationale
 
